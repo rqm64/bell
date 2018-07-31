@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import CompanyUnitList from './components/CompanyUnitList';
 
-class Company extends Component {
+class CompanyUnit extends Component {
   render() {
     return (
       <div>        
-        <h1>Компании</h1>        
+        <h1>Подразделение компании</h1>        
         <CompanyUnitList />
       </div>
     );
   }
 }
 
-export default Company;
+export default CompanyUnit;
