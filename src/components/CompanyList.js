@@ -49,8 +49,7 @@ class CompanyList extends Component {
 
 export default connect(
     state => ({
-        company: state.company,
-        modal: state.modal
+        company: state.company
     }),
     dispatch => ({
         action: (modalType, id) => {

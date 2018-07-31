@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import ModalCompany from '../modal/modalCompany';
 import ModalDelete from '../modal/modalDelete';
+import ModalAddCompany from '../modal/modalAddCompany';
 
 class ModalWindow extends Component {
 
@@ -12,6 +13,7 @@ class ModalWindow extends Component {
         this.modalClose=this.modalClose.bind(this);
         this.companyEdit=this.companyEdit.bind(this);
         this.deleteObject=this.deleteObject.bind(this);
+        this.addСompany=this.addСompany.bind(this);
 
     }
 
@@ -52,7 +54,20 @@ class ModalWindow extends Component {
                         />
                     </div>
                 );
-            }        
+            }
+
+            case 'addCompany' : {
+                
+                return  (
+                    <div className="static-modal">
+                        <ModalAddCompany
+                            modalClose={this.modalClose}
+                            addСompany={this.addСompany}
+                        />
+                    </div>
+                );
+            }
+
         }   
     }
 
@@ -71,11 +86,18 @@ class ModalWindow extends Component {
     deleteObject() {
         const {modalType, id} = this.props.modal;
         switch(modalType) {
-            case 'deleteCompany' : {
-                return (this.props.deleteObject('DELETE_COMPANY', id));
-            }
+            case 'deleteCompany' : 
+                    this.props.deleteObject('DELETE_COMPANY', id);
+                    this.props.modalClose();
+                    break;
+            
         }
 
+    }
+
+    addСompany(name, address, inn) {
+        this.props.addCompany(name,address, inn);
+        this.props.modalClose();        
     }
 
 
@@ -96,6 +118,9 @@ export default connect(
       deleteObject: (type, id ) => {
         dispatch({ type: type, id: id});
       },
+      addCompany: (name, address, inn) => {
+        dispatch({ type: 'ADD_COMPANY', nameCompany: name, addressCompany: address, innCompany: inn });
+      }
 
     })
   )(ModalWindow);;

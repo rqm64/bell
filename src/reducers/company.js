@@ -24,21 +24,19 @@ export default function isCompany(state = initialState, action) {
         case 'ADD_COMPANY' : {
             return [
                 ...state, {
-                    idCompany: 3,
-                    nameCompany: 'Yokki',
-                    addressCompany: 'Japan',
-                    innCompany: 999555586767565
+                    idCompany: state[state.length-1].idCompany + 1,
+                    nameCompany: action.nameCompany,
+                    addressCompany: action.addressCompany,
+                    innCompany: action.innCompany
                 }              
                 
             ];
         }
 
         case 'DELETE_COMPANY' : {
-            return {
-                ...state,
-                isLogin: false,
-                loginName: ''
-            };
+            const idx = state.findIndex(item => item.idCompany === action.id);
+            state.splice(idx, 1);
+            return [...state];  
         }
 
         case 'EDIT_COMPANY' : {
