@@ -11,7 +11,7 @@ class ModalWindow extends Component {
         super(props);
 
         this.modalClose=this.modalClose.bind(this);
-        this.companyEdit=this.companyEdit.bind(this);
+        this.editCompany=this.editCompany.bind(this);
         this.deleteObject=this.deleteObject.bind(this);
         this.addСompany=this.addСompany.bind(this);
 
@@ -47,7 +47,7 @@ class ModalWindow extends Component {
                     <div className="static-modal">
                         <ModalCompany 
                             modalClose={this.modalClose}
-                            companyEdit={this.companyEdit}
+                            editCompany={this.editCompany}
                             nameCompany={companyFilter.nameCompany}
                             addressCompany={companyFilter.addressCompany}
                             innCompany={companyFilter.innCompany}
@@ -77,9 +77,9 @@ class ModalWindow extends Component {
         this.props.modalClose();
     }
 
-    companyEdit(name, address, inn) {
+    editCompany(name, address, inn) {
         const {id} = this.props.modal;
-        this.props.companyEdit(id, name, address, inn);
+        this.props.editCompany(id, name, address, inn);
         this.props.modalClose();
     }
 
@@ -112,7 +112,7 @@ export default connect(
       modalClose: () => {
         dispatch({ type: 'MODAL_CLOSE' });
       },
-      companyEdit: (id, name, address, inn) => {
+      editCompany: (id, name, address, inn) => {
         dispatch({ type: 'EDIT_COMPANY', idCompany: id, nameCompany: name, addressCompany: address, innCompany: inn });
       },
       deleteObject: (type, id ) => {

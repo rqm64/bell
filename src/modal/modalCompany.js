@@ -6,7 +6,7 @@ import Button from '../../node_modules/react-bootstrap/lib/Button';
 
 class modalCompany extends Component {
   render() {
-    const { modalClose, companyEdit, nameCompany, addressCompany, innCompany } = this.props;
+    const { modalClose, editCompany, nameCompany, addressCompany, innCompany } = this.props;
     return (
         <Modal.Dialog>
             <Modal.Header>
@@ -33,7 +33,7 @@ class modalCompany extends Component {
                 </div>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={()  => {companyEdit(this.nameCompanyInput.value, this.addressCompanyInput.value, this.innCompanyInput.value)}}>Сохранить</Button>
+                <Button onClick={()  => {editCompany(this.nameCompanyInput.value, this.addressCompanyInput.value, this.innCompanyInput.value)}}>Сохранить</Button>
                 <Button bsStyle="primary" onClick={()  => {modalClose()}}>Отмена</Button>
             </Modal.Footer>
         </Modal.Dialog> 
