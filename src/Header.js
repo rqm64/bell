@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import LoginForm from './components/LoginForm';
 
 class Header extends Component {
   render() {
     return (
       <header>
-        <LoginForm />        
+        {this.props.loginForm.isLogin ? <LoginForm /> : ''}    
       </header>
     );
   }
 }
 
-export default Header;
+export default connect(
+  state => ({
+    loginForm: state.loginForm
+  })
+)(Header);
