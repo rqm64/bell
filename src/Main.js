@@ -12,7 +12,7 @@ class Main extends Component {
           <ModalWindow />
           <Switch>
             <Route exact path='/' component={Home}/>
-            <Route path='/company' component={CompanyUnit}/>
+            <Route path='/company/:id' component={CompanyUnit}/>
           </Switch>          
    
         </main>
