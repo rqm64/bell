@@ -19,7 +19,7 @@ class App extends Component {
 
 
 export default connect(
-  state => ({
+  state => ({    
     loginForm: state.loginForm
   })
 )(App);

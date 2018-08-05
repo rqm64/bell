@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 import ListGroupItem from '../../node_modules/react-bootstrap/lib/ListGroupItem';
 
