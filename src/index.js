@@ -24,7 +24,7 @@ ReactDOM.render(
                 <Switch>
                     <Route exact path='/' component={Company}/>
                     <Route path='/loginform' component={LoginForm}/>
-                    <Route path='/company/:id' component={CompanyUnit}/>
+                    <Route path='/company/:idCompany' component={CompanyUnit}/>
                 </Switch>
             </App>                
         </HashRouter>

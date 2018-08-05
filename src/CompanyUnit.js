@@ -6,7 +6,7 @@ class CompanyUnit extends Component {
     return (
       <div>        
         <h1>Подразделение компании</h1>        
-        <CompanyUnitList />
+        <CompanyUnitList idCompany={this.props.params.idCompany}/>        
       </div>
     );
   }
