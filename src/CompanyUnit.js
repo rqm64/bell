@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import CompanyUnitList from './components/CompanyUnitList';
 
 class CompanyUnit extends Component {
@@ -6,7 +7,7 @@ class CompanyUnit extends Component {
     return (
       <div>        
         <h1>Подразделение компании</h1>        
-        <CompanyUnitList idCompany={this.props.params.idCompany}/>        
+        <CompanyUnitList idCompany={this.props.match.params.idCompany}/>        
       </div>
     );
   }

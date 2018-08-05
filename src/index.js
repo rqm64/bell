@@ -4,7 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
 import rootReducers from './reducers/index';
@@ -19,7 +19,7 @@ const store = createStore(rootReducers);
 
 ReactDOM.render(
     <Provider store={store}>
-        <HashRouter>
+        <BrowserRouter>
             <App>
                 <Switch>
                     <Route exact path='/' component={Company}/>
@@ -27,7 +27,7 @@ ReactDOM.render(
                     <Route path='/company/:idCompany' component={CompanyUnit}/>
                 </Switch>
             </App>                
-        </HashRouter>
+        </BrowserRouter>
     </Provider>,
     document.getElementById('root')
 );

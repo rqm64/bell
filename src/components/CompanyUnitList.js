@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class CompanyUnitList extends Component {
   render() {
     return (
-      <div>        
-        {this.props.idCompany}
+      <div>
+        123        
+        {console.log(this.props.idCompany)}
       </div>
     );
   }
