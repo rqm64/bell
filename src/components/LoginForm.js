@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Button from '../../node_modules/react-bootstrap/lib/Button';
+import Well from '../../node_modules/react-bootstrap/lib/Well';
+
+
 class LoginForm extends Component {  
 
-  loginCheck() {
+  checkLogin() {
     const {isLogin, loginName} = this.props.loginForm;
     let logConstructor;
     if (isLogin){
       logConstructor = 
-        <div>
+        <div className='float-right'>
           Вы зашли как, {loginName} 
-          <button  onClick={this.logOutClick.bind(this)}>Выйти</button>
+          <Button bsSize="small" bsStyle="secondary" onClick={this.logOutClick.bind(this)}>Выйти</Button>
         </div>;
     } else {
       logConstructor =        
@@ -37,7 +41,7 @@ class LoginForm extends Component {
   render() {
     return (
       <form>
-        {this.loginCheck()}        
+        {this.checkLogin()}        
       </form>
     );
   }

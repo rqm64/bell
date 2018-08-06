@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Button from '../../node_modules/react-bootstrap/lib/Button';
+
 
 class ButtonAdd extends Component {
   render() {
       return (
-        <button onClick={this.addComponent.bind(this)}>
+        <Button bsStyle="success" onClick={this.addComponent.bind(this)}>
             Добавить компанию
-        </button>
+        </Button>
       );
   }
 
