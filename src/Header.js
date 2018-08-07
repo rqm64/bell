@@ -10,10 +10,10 @@ class Header extends Component {
   render() {
     return (
       <Row className='align-items-center'>
-        <Col sm={9} md={9} lg={9}>
+        <Col sm={8} md={8} lg={8}>
           <img src={logo} width='100' />
         </Col>
-        <Col sm={3} md={3} lg={3}>           
+        <Col sm={4} md={4} lg={4}>           
             {this.props.loginForm.isLogin ? <LoginForm /> : ''}
         </Col>
       </Row>

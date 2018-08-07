@@ -16,7 +16,37 @@ class CompanyItem extends Component {
     const {idCompany, nameCompany, addressCompany, innCompany, editCompany, deleteCompany} = this.props;
     return (
       <ListGroupItem>
-        <Grid>
+        <table className='table'>
+          <tr>
+            <td colspan="2">
+              <h2>
+                <Link to={`/company/${idCompany}`} className='text-info'>
+                  {nameCompany}
+                </Link>
+              </h2>
+            </td>
+            <td>
+              <div className='float-right'>
+                <ButtonToolbar>
+                  <Button bsSize="small" bsStyle="info" onClick={()  => {editCompany(idCompany)}}>Редактировать</Button>
+                  <Button bsSize="small" bsStyle="secondary" onClick={()  => {deleteCompany(idCompany)}}>Удалить</Button>
+                </ButtonToolbar> 
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope='row' >Адрес:</th>
+            <td className='w-50'>{addressCompany}</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope='row' >ИНН:</th>
+            <td className='w-50'>{innCompany}</td>
+            <td></td>
+          </tr>           
+        </table>
+
+        {/* <Grid>
           <Row>
             <Col sm={10} md={10} lg={10}>
               <h2>
@@ -36,7 +66,7 @@ class CompanyItem extends Component {
               </div>
             </Col>
           </Row>
-        </Grid>
+        </Grid> */}
       </ListGroupItem>
     );
   }

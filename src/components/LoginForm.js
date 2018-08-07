@@ -12,9 +12,13 @@ class LoginForm extends Component {
     let logConstructor;
     if (isLogin){
       logConstructor = 
-        <div className='float-right'>
-          Вы зашли как, {loginName} 
-          <Button bsSize="small" bsStyle="secondary" onClick={this.logOutClick.bind(this)}>Выйти</Button>
+        <div>
+          <table className='table'>
+            <tr  className='border'>
+              <td>Вы зашли как, <span className='text-info'>{loginName}</span></td>           
+              <td><Button bsSize="small" bsStyle="secondary" onClick={this.logOutClick.bind(this)} className='float-right'>Выйти</Button></td>
+            </tr>
+          </table>
         </div>;
     } else {
       logConstructor =        

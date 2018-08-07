@@ -33,8 +33,8 @@ class modalAddCompany extends Component {
                 </div>                          
             </Modal.Body>          
             <Modal.Footer>
-                <Button onClick={()  => {addСompany(this.nameCompanyInput.value, this.addressCompanyInput.value, this.innCompanyInput.value)}}>Добавить</Button>
-                <Button bsStyle="primary" onClick={()  => {modalClose()}}>Отмена</Button>
+                <Button bsStyle='success' onClick={()  => {addСompany(this.nameCompanyInput.value, this.addressCompanyInput.value, this.innCompanyInput.value)}}>Добавить</Button>
+                <Button bsStyle="info" onClick={()  => {modalClose()}}>Отмена</Button>
             </Modal.Footer>
         </Modal.Dialog> 
     );
