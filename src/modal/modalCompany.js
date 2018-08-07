@@ -13,28 +13,39 @@ class modalCompany extends Component {
                 <Modal.Title>Редактировать {nameCompany}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <div>
-                    Компания:
-                    <input  type='text'
-                            defaultValue={nameCompany}
-                            ref={(input) => { this.nameCompanyInput = input }} />
-                </div>
-                <div>
-                    Адрес:
-                    <input  type='text'
-                            defaultValue={addressCompany}
-                            ref={(input) => { this.addressCompanyInput = input }}/>
-                </div>
-                <div>
-                    ИНН:
-                    <input  type='text'
-                            defaultValue={innCompany}
-                            ref={(input) => { this.innCompanyInput = input }}/>
-                </div>
+                <table className='table'>
+                    <tr>
+                        <th>Компания:</th>
+                        <td>
+                            <input  type='text'
+                                    size='40'
+                                    defaultValue={nameCompany}
+                                    ref={(input) => { this.nameCompanyInput = input }} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Адрес:</th>
+                        <td>
+                            <input  type='text'
+                                    size='40'
+                                    defaultValue={addressCompany}
+                                    ref={(input) => { this.addressCompanyInput = input }}/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ИНН:</th>
+                        <td>
+                            <input  type='text'
+                                    size='40'
+                                    defaultValue={innCompany}
+                                    ref={(input) => { this.innCompanyInput = input }}/>
+                        </td>
+                    </tr>
+                </table>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={()  => {editCompany(this.nameCompanyInput.value, this.addressCompanyInput.value, this.innCompanyInput.value)}}>Сохранить</Button>
-                <Button bsStyle="primary" onClick={()  => {modalClose()}}>Отмена</Button>
+                <Button bsStyle='success' onClick={()  => {editCompany(this.nameCompanyInput.value, this.addressCompanyInput.value, this.innCompanyInput.value)}}>Сохранить</Button>
+                <Button bsStyle='info' onClick={()  => {modalClose()}}>Отмена</Button>
             </Modal.Footer>
         </Modal.Dialog> 
     );

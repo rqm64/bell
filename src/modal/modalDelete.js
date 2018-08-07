@@ -13,8 +13,8 @@ class modalCompany extends Component {
                 <Modal.Title>Удалить {nameCompany}?</Modal.Title>
             </Modal.Header>           
             <Modal.Footer>
-                <Button onClick={()  => {deleteObject()}}>Да</Button>
-                <Button bsStyle="primary" onClick={()  => {modalClose()}}>Нет</Button>
+                <Button bsStyle='danger'onClick={()  => {deleteObject()}}>Да</Button>
+                <Button bsStyle='info' onClick={()  => {modalClose()}}>Нет</Button>
             </Modal.Footer>
         </Modal.Dialog> 
     );

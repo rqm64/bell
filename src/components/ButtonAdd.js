@@ -7,7 +7,7 @@ import Button from '../../node_modules/react-bootstrap/lib/Button';
 class ButtonAdd extends Component {
   render() {
       return (
-        <Button bsStyle="success" onClick={this.addComponent.bind(this)}>
+        <Button bsStyle='success' onClick={this.addComponent.bind(this)}>
             Добавить компанию
         </Button>
       );
