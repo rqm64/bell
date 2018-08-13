@@ -45,6 +45,10 @@ class CompanyList extends Component {
         this.props.action('deleteCompany', idCompany); 
     }
 
+    componentDidMount() {
+        this.props.loadData();
+    }
+
 }
 
 export default connect(
@@ -54,6 +58,30 @@ export default connect(
     dispatch => ({
         action: (modalType, id) => {
           dispatch({ type: 'MODAL_OPEN', modalType: modalType, id: id});
+        },
+        loadData: () => {
+            new Promise((resolve, reject) => {
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', "http://www.mocky.io/v2/5b71d8333200005500f36ff3", true);
+                xhr.onload = function() {
+                    if(xhr.status == 200){
+                        resolve(xhr.response);
+                    } else {
+                        reject(new Error("Error onload"));
+                    }
+                };
+                xhr.onerror = function() {
+                    reject(new Error("Error onerror"));
+                }
+                xhr.send();
+            })
+            .then(response => {
+                let result = JSON.parse(response);
+                return result;             
+            })
+            .then(response => {
+                dispatch({ type: 'SET_STATE', response: response})
+            })
         }
     })
 )(CompanyList);;

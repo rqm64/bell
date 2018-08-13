@@ -19,7 +19,7 @@ const initialState = [
         }
 ];
 
-export default function isCompany(state = initialState, action) {
+export default function isCompany(state = [], action) {
     switch (action.type) {
         case 'ADD_COMPANY' : {
             return [
@@ -48,7 +48,12 @@ export default function isCompany(state = initialState, action) {
                     innCompany: action.innCompany    
             };
             return [...state];  
-         }
+        }
+
+        case 'SET_STATE' : {
+            state = action.response;
+            return [...state];  
+        }
     
         default : return state; 
     }   
